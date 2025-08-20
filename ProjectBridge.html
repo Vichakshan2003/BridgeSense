@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BridgeSense: Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Train Bridge Integrity</h1>
+        <nav>
+            <ul>
+                <li><a href="./ProjectBridge.html">Home</a></li>
+                <li><a href="./History.html">History</a></li>
+                <li><a href="./Product.html">Product Specifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="i40-disaster">
+        <h2>Project Inspiration: <span style="font-size: 0.8em;">I-40 Bridge Disaster</span></h2>
+        <article>
+            <h3>Overview</h3>
+            <p>The I-40 Bridge Disaster occurred on May 26, 2002, when a barge collided with a bridge pier near Webbers Falls, Oklahoma, causing a section of the bridge to collapse.
+                 This tragic event resulted in the loss of 14 lives and highlighted the importance of bridge safety and integrity.</p>
+        </article>
+        <div class="video-container">
+            <h3>Watch the Incident</h3>
+            <iframe title="video of a mf bridge" class="bridge-video" src="https://www.newson6.com/story/628ef3567ada240725a637de/heartbreak-and-hope:-20-years-after-the-i40-bridge-collapse" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="images">
+            <h3>Images of the Incident</h3>
+            <img src="./I-40-Bridge-Collapse-2.jpg" alt="I-40 Bridge Disaster" style="width: 30%; height: auto;">
+            <img src="./Model of i40 bridge.jpg" alt="Recreated model of I-40 bridge" style="width: 30%; height: auto;">
+            <img src="./10e4d393-6ab5-4db2-b969-612832f17ae0-Collapsed_Bridge_at_Webbers_Falls_-_PHOTOS_BY_THE_OKLAHOMAN_6.webp" alt="Incident Image 2" style="width: 30%; height: auto;">
+            <img src="./bridge1.jpg" alt="Incident Image 3" style="width: 30%; height: auto;">
+            <img src="./bridge2.jpg" alt="Incident Image 4" style="width: 30%; height: auto;">
+            <img src="./b3.jpg" alt="Incident Image 5" style="width: 30%; height: auto;">
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const canvas = document.getElementById("trainCanvas");
+            const ctx = canvas.getContext("2d");
+            canvas.width = 600;
+            canvas.height = 100;
+
+            let trainX = 0;
+
+            function drawTrain() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "black";
+                ctx.fillRect(trainX, 40, 50, 30);
+                ctx.fillStyle = "gray";
+                ctx.fillRect(trainX + 10, 60, 30, 10);
+                ctx.fillStyle = "blue";
+                ctx.fillRect(trainX + 20, 30, 20, 10);
+                trainX += 2;
+                if (trainX > canvas.width) trainX = -50;
+                requestAnimationFrame(drawTrain);
+            }
+
+            drawTrain();
+        });
+    </script>
+</body>
+</html>
